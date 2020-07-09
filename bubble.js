@@ -11,7 +11,7 @@ function updateBubbles() {
         //bubble collisions 
         if (dist(bb[i].x, bb[i].y, p.x, p.y) < bbSize / 2) {
             touch = true;
-            console.log(touch);
+            
         }
         //update bb locations
         bb[i].add(bbVel[i]);

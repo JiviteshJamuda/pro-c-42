@@ -1,3 +1,4 @@
+var gameState = "play";
 
 function setup() {
   createCanvas(400, 400);
@@ -27,4 +28,28 @@ function draw() {
   updateBubbles();
   updateLasers();
 
+  if (Health <= 0){
+    gameState = "lost"
+  }
+  if (Score >= 50){
+    gameState = "won"
+  }
+
+  if (gameState === "lost"){
+    clear();
+    textAlign("center");
+    textSize(20);
+    fill("red")
+    textSize(50)
+    text("YOU LOSE!", 200,200);
+  }
+
+  if (gameState === "won"){
+    clear();
+    textAlign("center");
+    textSize(20);
+    fill("green")
+    textSize(50)
+    text("YOU WIN!", 200,200);
+  }
 }
